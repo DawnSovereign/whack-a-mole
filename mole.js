@@ -2,10 +2,36 @@ let currMoleTile;
 let currPlantTile;
 let score = 0;
 let gameOver = false;
+// document.querySelector("#resetBtn").addEventListener("click", resetBtn);
+// document.querySelector("#resetBtn").classList.add("hidden");
+
 
 window.onload = function(){
     setGame();
 }
+
+// function resetBtn(){
+//     resetGame();
+//     document.querySelector("#resetBtn").classList.add("hidden");
+//     document.querySelector("#resetBtn").disabled = false;
+
+// }
+
+// function resetGame(){
+//     //resetting the game variables
+//     currMoleTile = null;
+//     currPlantTile = null;
+//     score = 0;
+//     gameOver = false;
+
+//     //clear the game board
+//     document.getElementById("board").innerHTML = "";
+//     //Reset score display
+//     document.getElementById("score").innerText = "0";
+//     //Restart game
+//     setGame();
+// }
+
 
 function setGame(){
     //setting up the grid for the game board in the html
@@ -19,7 +45,7 @@ function setGame(){
         document.getElementById("board").appendChild(tile);
     }
 
-    setInterval(setMole, 1000)// 0000milliseconds = 0 sceonds
+    setInterval(setMole, 1000)//0000 milliseconds = 0 sceonds
     setInterval(setPlant, 2000)//0000 milliseconds = 0 seconds
 }
 
@@ -79,10 +105,11 @@ function selectTile(){
     
     if(this == currMoleTile){
         score++;
-        document.getElementById("score").innerText = score.toString(); //updates teh score
+        document.getElementById("score").innerText = score.toString(); //updates the score
     }
     else if(this == currPlantTile){
         document.getElementById("score").innerText = "GAME OVER!\nFinal Score: " + score.toString();
         gameOver = true;
+        // document.querySelector("#resetBtn").classList.remove("hidden");
     }
 }

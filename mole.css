@@ -11,6 +11,10 @@ body{
     color: crimson;
 }
 
+/* .hidden{
+    display: none;
+} */
+
 /* creating the board */
 #board{
     width: 540px; 
