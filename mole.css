@@ -26,3 +26,17 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+
+/* board is 540x540. Divide into 3x3 tiles. that is 180x180 per div */
+#board div{
+    width: 180px;
+    height: 180px;
+    background-image: url("./img/pipe.png");
+    background-size: cover;
+}
+
+#board div img{
+    /* all img inside the tile div tags */
+    width: 100px;
+    height: 100px;
+}
