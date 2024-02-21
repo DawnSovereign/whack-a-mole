@@ -39,4 +39,11 @@ body{
     /* all img inside the tile div tags */
     width: 100px;
     height: 100px;
+
+    /* makes it so user can't highlight or drag the images*/
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }

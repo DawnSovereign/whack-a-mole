@@ -15,6 +15,7 @@ function setGame(){
         //Gonne use this id to know which tile was clicked on and see if the tile had the mole or not
         let tile = document.createElement("div");
         tile.id = i.toString();
+        tile.addEventListener("click", selectTile)
         document.getElementById("board").appendChild(tile);
     }
 
@@ -29,7 +30,9 @@ function getRandomTile(){
 }
 
 function setMole(){
-
+    if(gameOver){
+        return;
+    }
     //clears the tags within the div tag when called again
     //clears the previous mole
     if(currMoleTile){
@@ -52,6 +55,9 @@ function setMole(){
 }
 
 function setPlant(){
+    if(gameOver){
+        return;
+    }
     if(currPlantTile){
         currPlantTile.innerHTML = "";
     }
@@ -64,4 +70,19 @@ function setPlant(){
     }
     currPlantTile = document.getElementById(num);
     currPlantTile.appendChild(plant);
+}
+
+function selectTile(){
+    if(gameOver){
+        return;
+    }
+    
+    if(this == currMoleTile){
+        score++;
+        document.getElementById("score").innerText = score.toString(); //updates teh score
+    }
+    else if(this == currPlantTile){
+        document.getElementById("score").innerText = "GAME OVER!\nFinal Score: " + score.toString();
+        gameOver = true;
+    }
 }
