@@ -1,0 +1,28 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: url("./img/mario-bg.jpg");
+    background-size: cover;
+}
+
+.titlePart{
+    font-size: 8px;
+    font-style: italic;
+    color: crimson;
+}
+
+/* creating the board */
+#board{
+    width: 540px; 
+    height: 540px;
+    background: url("./img/soil.png");
+    background-size: cover;
+    border: 4px solid white;
+    border-radius: 20px;
+
+    /*center the board */
+    margin: 0 auto;
+    /*makes sure that the tiles left, right, up, and down do not fall out the board*/
+    display: flex;
+    flex-wrap: wrap;
+}
